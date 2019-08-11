@@ -1,0 +1,105 @@
+{
+  "name": "project.stoffel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "rimraf dist && webpack --watch",
+    "start": "webpack-dev-server  --open --color ",
+    "build": "rimraf dist &&  webpack --progress --profile",
+    "server": "nodemon --watch server/server.js server/server.js",
+    "parse-server": "node ./server/server.js",
+    "server-prod": "node server/server.js",
+    "setup": "pm2 deploy ecosystem.config.js production setup",
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "test-backend": "jest",
+    "serve": "node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badgerads/project.stoffel.git"
+  },
+  "author": "austin",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "aws-sdk": "^2.468.0",
+    "axios": "^0.18.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
+    "dotenv": "^8.0.0",
+    "dynamodb": "^1.2.0",
+    "express": "^4.16.4",
+    "extract-zip": "^1.6.7",
+    "filestack-js": "^3.2.0",
+    "jest": "^24.8.0",
+    "joi": "^14.3.1",
+    "json-concat": "0.0.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
+    "multer": "^1.4.1",
+    "react": "^16.8.6",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.3.2",
+    "react-loadable": "^5.4.0",
+    "react-onclickoutside": "^6.8.0",
+    "react-phone-number-input": "^2.3.16",
+    "react-router-dom": "^4.2.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "semantic-ui-react": "^0.87.1",
+    "tough-cookie": "^3.0.1",
+    "uuidv4": "^4.0.0",
+    "validator": "^11.1.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "~7",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              ">1%",
+              "last 3 versions"
+            ]
+          }
+        }
+      ],
+      "stage-2",
+      "latest",
+      "react"
+    ],
+    "plugins": [
+      "syntax-dynamic-import",
+      "transform-class-properties"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/badgerads/project.stoffel/issues"
+  },
+  "homepage": "https://github.com/badgerads/project.stoffel#readme"
+}
